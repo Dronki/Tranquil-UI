@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Tranquil-UI-demo</title>
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600|Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="css/UI.css">
+	<script src="js/tranquil.js"></script>
+</head>
+<body>
+	<section class="panel">
+		<h1>Headings</h1>
+		<hr>
+		<h1>Heading 1</h1>
+		<h2>Heading 2</h2>
+		<h3>Heading 3</h3>
+		<h4>Heading 4</h4>
+		<h5>Heading 5</h5>
+		<h6>Heading 6</h6>
+	</section>
+	<form class="panel">
+		<h1>Forms</h1>
+		<fieldset>
+			<legend>Legend</legend>
+			<label for="text">Label for text</label>
+			<input type="text" id="text" name="text" />
+			<label for="password">Label for password</label>
+			<input type="password" id="password" name="password" />
+			<select>
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+				<option value="toyota">Toyota</option>
+			</select>
+		</fieldset>
+		<fieldset style="width: 10%;">
+			<legend>Flat-buttons</legend>
+			<button class="small">Button</button>
+			<button class="">Button</button>
+			<button class="large">Button</button>
+			<legend>Raised-buttons</legend>
+			<button class="raised small">Button</button>
+			<button class="raised ">Button</button>
+			<button class="raised large">Button</button>
+		</fieldset>
+	</form>
+	<table class="panel">
+		<h1>Table</h1>
+		<thead>
+			<tr>
+				<th>Header 1</th>
+				<th>Header 2</th>
+				<th>Header 3</th>
+				<th>Header 4</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cell 1</td>
+				<td>Cell 2</td>
+				<td>Cell 3</td>
+				<td>Cell 4</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="panel">
+		<h1>Columns</h1>
+		<p>Currently up to four columns, fully responsive.</p>
+		<p>Expands to 100% when screen-size is below 768px</p>
+		<a href="show.php?file=column.html" rel="modal:open">Show source</a>
+		<div class="columns group">
+			<div class="col span_1_of_4">
+				<div class="panel">
+					<h2 class="title">Routes</h2>
+				</div>
+			</div>
+			<div class="col span_1_of_4">
+				<div class="panel">
+					<h2 class="title">Pages</h2>
+				</div>
+			</div>
+			<div class="col span_1_of_4">
+				<div class="panel">
+					<h2 class="title">Statistics</h2>
+				</div>
+			</div>
+			<div class="col span_1_of_4">
+				<div class="panel">
+					<h2 class="title">Settings</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="panel">
+		<h1>Snackbar and modal</h1>
+		<button class="raised ripple big" style="width: 150px;" onClick="snackbar('Info-level')">Snackbar - Info</button>
+		<button class="raised ripple big" style="width: 150px;" onClick="snackbar('Warning-level', 'warning')">Snackbar - Warning</button>
+		<button class="raised ripple big" style="width: 150px;" onClick="snackbar('Error-level', 'error')">Snackbar - Error</button>
+		<button class="raised ripple big" style="width: 150px;" onClick="snackbar('Success-level', 'success')">Snackbar - Success</button>
+		<button class="raised ripple big" style="width: 150px;" onClick="modal('Testing modal')">Modal</button>
+	</section>
+	
+</body>
+</html>

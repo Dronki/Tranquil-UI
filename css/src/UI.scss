@@ -1,3 +1,4 @@
+@import "UI_Reset";
 /**
 * Tranquil-UI, components
 */
@@ -31,14 +32,14 @@ $formBorderColor: rgba(0,0,0,0.87) !default; // Border-color (color)
 	}
 }
 
-@mixin clearfix() {
+@mixin clearfix {
+	&::before,
 	&::after {
+		clear: both;
 		content: "";
 		display: table;
-		clear: both;
 	}
 }
-
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Lato', sans-serif;
@@ -72,23 +73,6 @@ form {
 			border-bottom: 1px solid rgba(0, 0, 0, 0.26);
 			margin-bottom: 0.5em;
 			padding-bottom: 8px;
-		}
-		&#pageContent {
-			@include minScreen( 768px ) {
-				float: left;
-				width: 65%;
-			}
-			width: 100%;
-			margin-bottom: 20px;
-		}
-		&#pageSettings,
-		&#pageMeta {
-			@include minScreen( 768px ) {
-				float: right;
-				width: 30%;
-			}
-			width: 100%;
-			margin-bottom: 20px;
 		}
 	}
 }
@@ -324,6 +308,7 @@ select {
 * Panels and stuffz
 */
 .panel {
+	@include clearfix();
 	padding: 15px;
 	margin-bottom: 20px;
 	border-radius: 0;
@@ -481,6 +466,83 @@ table {
 			&:focus {
 				color: black;
 				text-decoration: none;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.columns {
+	&.group {
+		clear: both;
+		padding: 0px;
+		margin: 0px;
+
+		zoom: 1;
+
+		&:before,
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+
+		.col {
+			display: block;
+			float: left;
+			margin: 1% 0 1% 1.6%;
+			&:first-child {
+				margin-left: 0;
+			}
+			&.span_4_of_4 {
+				width: 100%;
+			}
+			&.span_3_of_4 {
+				width: 74.6%;
+			}
+			&.span_2_of_4 {
+				width: 49.2%;
+			}
+			&.span_1_of_4 {
+				width: 23.8%;
+			}
+			@include maxScreen( 768px ) {
+				margin: 1% 0 1% 0; 
+				&.span_1_of_4,
+				&.span_2_of_4,
+				&.span_3_of_4,
+				&.span_4_of_4 {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+ul.pagination {
+	display: inline-flex;
+	li {
+		a {
+			font-size: 1em;
+			background-color: $buttonBackgroundColor;
+			color: $buttonFontColor;
+			font-weight: 500;
+			cursor: pointer;
+			font-family: 'Lato', sans-serif;
+			padding: 8px 8px;
+			display: block;
+		}
+		&.disabled {
+			display: none;
+			a,
+			a:hover {
+				cursor: no-drop;
+			}
+			
+		}
+		&.active {
+			a,
+			a:hover {
 				cursor: pointer;
 			}
 		}
